@@ -1,7 +1,7 @@
 import React, {useState} from "react";
-import { v4 as uuidv4 } from 'uuid';
+import { nanoid } from 'nanoid'
 
-const Form = () => {
+const Form = ({creatAppointment}) => {
     const [appointment, setAppointment] = useState({
         pet: '',
         owner:'',
@@ -31,11 +31,10 @@ const Form = () => {
         setError(false)
 
         //asignar id
-        // appointment.id = uuid.v4();
-        appointment.id=29;
+        appointment.id= nanoid();
         console.log(appointment)
-        //Crerar Cita
-
+        //Crear Cita
+        creatAppointment(appointment)
         //limpiar formulario
 
     }
