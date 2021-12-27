@@ -1,4 +1,5 @@
 import React, {useState} from "react";
+import { v4 as uuidv4 } from 'uuid';
 
 const Form = () => {
     const [appointment, setAppointment] = useState({
@@ -26,8 +27,13 @@ const Form = () => {
             setError(true)
             return;
         }
-        //asignar id
+        //eliminar msj
+        setError(false)
 
+        //asignar id
+        // appointment.id = uuid.v4();
+        appointment.id=29;
+        console.log(appointment)
         //Crerar Cita
 
         //limpiar formulario
