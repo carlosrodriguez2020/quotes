@@ -9,22 +9,19 @@ const App = () => {
 
 
 
-   const creatAppointment = appointment =>{
+  const creatAppointment = appointment =>{
     console.log(appointment)
 
     setAppointments([
       ...appointments,
-      appointments
-
+      appointment
     ]);
-
-    console.log(appointment)
-
   }
+  const title = appointments.lenght === 0 ? "Manage your appointments" : "no appointments";
 
   return (
-   <Fragment>
-     <section className="container">
+    <Fragment>
+      <section className="container">
       <h1>Patient Administration</h1>
       
       <div className="row">
@@ -34,16 +31,21 @@ const App = () => {
           />
         </div>
         <div className="one-half column">
-          <ReservationMade 
-          
-          />
+          <h2>{title}</h2>
 
+          {appointments.map(appointment=>(
+            <ReservationMade 
+            appointment={appointment}
+            key={appointment.id}
+            
+            />
+          ))}
         </div>
       </div>
 
-     </section>
+      </section>
 
-   </Fragment>
+    </Fragment>
   );
 }
 

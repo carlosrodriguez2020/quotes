@@ -32,10 +32,18 @@ const Form = ({creatAppointment}) => {
 
         //asignar id
         appointment.id= nanoid();
-        console.log(appointment)
         //Crear Cita
         creatAppointment(appointment)
-        //limpiar formulario
+        //limpiar formulario    
+        setAppointment({
+            pet: '',
+            owner:'',
+            date:'',
+            time:'',
+            symptom:'',
+        
+        })
+
 
     }
 
