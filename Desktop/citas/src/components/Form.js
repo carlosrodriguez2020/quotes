@@ -1,5 +1,6 @@
 import React, {useState} from "react";
-import { nanoid } from 'nanoid'
+import { nanoid } from 'nanoid';
+import PropTypes from 'prop-types';
 
 const Form = ({creatAppointment}) => {
     const [appointment, setAppointment] = useState({
@@ -108,5 +109,9 @@ const Form = ({creatAppointment}) => {
             </form>
         </>
     )}
- 
+
+    Form.propTypes={
+    creatAppointment:PropTypes.func.isRequired
+    }
+
 export default Form;

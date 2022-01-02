@@ -1,7 +1,7 @@
-import React from "react"
+import React from "react";
+import PropTypes from 'prop-types';
 
-
-const ResercationMade = ({appointment,deleteAppointment}) => {
+const ReservationMade = ({appointment,deleteAppointment}) => {
 
     return(
     <div className="cita">
@@ -15,12 +15,13 @@ const ResercationMade = ({appointment,deleteAppointment}) => {
         onClick={()=>deleteAppointment(appointment.id)}
         >Delete appointment</button>
     </div>
-    
 
-    )
-
-
+)
 
 }
+ReservationMade.propTypes={
+    appointment: PropTypes.object.isRequired,
+    deleteAppointment: PropTypes.func.isRequired
+}
 
-export default ResercationMade;
+export default ReservationMade;
