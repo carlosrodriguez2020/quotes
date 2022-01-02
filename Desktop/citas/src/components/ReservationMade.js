@@ -1,7 +1,7 @@
 import React from "react"
 
 
-const ResercationMade = ({appointment}) => {
+const ResercationMade = ({appointment,deleteAppointment}) => {
 
     return(
     <div className="cita">
@@ -12,7 +12,7 @@ const ResercationMade = ({appointment}) => {
         <p>Symptom:<span>{appointment.symptom}</span></p>
         <button
         className="button eliminar u-full-width"
-        // onClick={}
+        onClick={()=>deleteAppointment(appointment.id)}
         >Delete appointment</button>
     </div>
     

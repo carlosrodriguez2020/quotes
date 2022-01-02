@@ -17,8 +17,17 @@ const App = () => {
       appointment
     ]);
   }
-  const title = appointments.lenght === 0 ? "Manage your appointments" : "no appointments";
+  
+  const deleteAppointment = id =>{
+    console.log(id)
 
+    const newAppointment = appointments.filter(appointment=>(
+      appointment.id !== id)
+      )
+      setAppointments(newAppointment)
+  
+  }
+  const title = appointments.length === 0 ? "No appointments" : "Manage your appointments";
   return (
     <Fragment>
       <section className="container">
@@ -37,7 +46,7 @@ const App = () => {
             <ReservationMade 
             appointment={appointment}
             key={appointment.id}
-            
+            deleteAppointment={deleteAppointment}
             />
           ))}
         </div>
